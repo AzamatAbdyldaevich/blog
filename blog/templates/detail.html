@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+      <h1>{{blog.id}} - {{blog.title}}</h1>
+      <p>{{blog.description}}</p>
+      <p><img src="{{blog.images.all.first}}" width = "150" height="100"></p>
+      <p>{{blog.author}}</p>
+      {% for hash in blog.hashtag_set.all%}
+      <p>{{hash}}</p>
+      {% endfor %}
+
+      <a href="{% url 'update' blog.id %}">update</a>
+      <a href="{% url 'delete' blog.id %}">delete</a>
+
+</body>
+</html>
